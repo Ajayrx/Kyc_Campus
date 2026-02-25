@@ -1,0 +1,176 @@
+You are a senior full-stack mobile app developer and elite UI/UX designer.
+
+Build a COMPLETE Android mobile application named
+"KYC – Know Your Campus".
+
+------------------------------------
+TECH STACK
+------------------------------------
+Frontend:
+- Flutter (Material 3)
+- State Management: Provider
+
+Backend:
+- Firebase Authentication (Email & Password)
+- Firebase Firestore
+- Firebase Cloud Messaging
+
+Target:
+- Android (APK ready)
+
+------------------------------------
+APP PURPOSE
+------------------------------------
+KYC (Know Your Campus) is a single trusted platform for ONLY one college.
+It eliminates WhatsApp chaos and notice-board dependency by delivering
+verified, AI-powered, personalized campus information.
+
+------------------------------------
+USER ROLES (STRICT)
+------------------------------------
+- Student
+- Admin
+- Department
+- Club
+- Placement Cell
+
+Only authorized roles can publish content.
+Students have read-only access.
+
+------------------------------------
+AUTHENTICATION & PRIVACY
+------------------------------------
+- College email login only
+- No external users
+- Role-based access control
+- All data belongs to the institution
+
+------------------------------------
+CORE MODULES
+------------------------------------
+📰 Notices & Announcements
+- Academic notices
+- Department updates
+- Official announcements
+
+🏆 Hackathons & Events
+- Workshops
+- Seminars
+- Fests
+
+🧑‍🤝‍🧑 Clubs
+- Club activities
+- Recruitment posts
+
+💼 Placement
+- Drives
+- Internship opportunities
+
+🎓 Academics
+- Timetable (view-only)
+- Exam schedules
+- Syllabus updates
+
+📊 Student Dashboard
+- Attendance (read-only)
+
+📆 Campus Calendar
+- Yearly holidays
+- Exams
+- Events
+
+------------------------------------
+AI FEATURES (MANDATORY)
+------------------------------------
+1. AI Summary Generator
+   - Convert long notices into:
+     • What is it?
+     • Who should care?
+     • Deadline?
+   - Text + voice summary
+
+2. Smart Notifications
+   - Deadline-based reminders
+   - Event alerts
+
+3. Natural Language Search
+   - Examples:
+     "Any exam updates this week?"
+     "Upcoming hackathons for CSE?"
+
+------------------------------------
+NEWS FEED LOGIC
+------------------------------------
+- Verified posts only
+- Personalized feed based on:
+  - Department
+  - Year
+  - Student interest
+- Category filters
+
+------------------------------------
+ADMIN PANEL (MOBILE)
+------------------------------------
+- Create / edit / delete posts
+- Set category & deadline
+- Control visibility
+- Role-based access
+
+------------------------------------
+UI / UX DESIGN (VERY IMPORTANT)
+------------------------------------
+Theme:
+- Cyan glow accents
+- Sky-400 color palette
+- Soft neon highlights
+
+Design Style:
+- Glassmorphism cards
+- Smooth animations
+- Rounded corners
+- Modern minimal layout
+- Dark & light modes
+
+------------------------------------
+DATABASE STRUCTURE
+------------------------------------
+users {
+  uid,
+  name,
+  email,
+  role,
+  department,
+  year
+}
+
+posts {
+  title,
+  content,
+  aiSummary,
+  category,
+  createdBy,
+  role,
+  departmentVisibility,
+  deadline,
+  createdAt
+}
+
+------------------------------------
+DELIVERABLES
+------------------------------------
+1. Complete Flutter project
+2. Firebase integration
+3. Provider state management
+4. Modern UI theme
+5. AI summary placeholders
+6. README with APK build steps
+
+------------------------------------
+QUALITY
+------------------------------------
+- Production-ready
+- Clean architecture
+- No dummy UI
+- Fully working app flow
+
+Generate the FULL Flutter codebase.
