@@ -142,6 +142,30 @@ export default function ProfileScreen() {
           </Animated.View>
         )}
 
+        <Animated.View entering={FadeInDown.delay(180).springify()} style={styles.section}>
+          <Pressable
+            onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); router.push("/faculty"); }}
+            style={({ pressed }) => [
+              styles.facultyBannerBtn,
+              {
+                backgroundColor: isDark ? COLORS.navyCard : "#fff",
+                borderColor: COLORS.cyan + "50",
+                opacity: pressed ? 0.85 : 1,
+                transform: [{ scale: pressed ? 0.98 : 1 }],
+              },
+            ]}
+          >
+            <View style={[styles.facultyBannerIcon, { backgroundColor: COLORS.cyan + "20" }]}>
+              <MaterialCommunityIcons name="account-tie-outline" size={28} color={COLORS.cyan} />
+            </View>
+            <View style={styles.facultyBannerText}>
+              <Text style={[styles.facultyBannerTitle, { color: C.text }]}>Faculty Directory</Text>
+              <Text style={[styles.facultyBannerSub, { color: C.textSecondary }]}>Phone numbers & emails for all teachers</Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color={COLORS.cyan} />
+          </Pressable>
+        </Animated.View>
+
         <Animated.View entering={FadeInDown.delay(200).springify()} style={styles.section}>
           <Text style={[styles.sectionTitle, { color: C.text }]}>Account</Text>
           <View style={[styles.menuCard, { backgroundColor: isDark ? COLORS.navyCard : "#fff", borderColor: isDark ? COLORS.navyBorder : "#E0F2FE" }]}>
@@ -216,4 +240,9 @@ const styles = StyleSheet.create({
   divider: { height: 1 },
   logoutBtn: { flexDirection: "row", alignItems: "center", justifyContent: "center", gap: 8, padding: 16, borderRadius: 14, borderWidth: 1.5, marginTop: 20 },
   logoutText: { fontFamily: "Poppins_600SemiBold", fontSize: 15, color: "#EF4444" },
+  facultyBannerBtn: { flexDirection: "row", alignItems: "center", gap: 14, padding: 16, borderRadius: 16, borderWidth: 1.5 },
+  facultyBannerIcon: { width: 52, height: 52, borderRadius: 14, alignItems: "center", justifyContent: "center" },
+  facultyBannerText: { flex: 1 },
+  facultyBannerTitle: { fontFamily: "Poppins_600SemiBold", fontSize: 16 },
+  facultyBannerSub: { fontFamily: "Poppins_400Regular", fontSize: 12, marginTop: 2 },
 });

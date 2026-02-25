@@ -55,6 +55,16 @@ constants/
   colors.ts            # COLORS, CATEGORY_COLORS, CATEGORY_LABELS
 ```
 
+## File Structure
+
+```
+context/
+  FacultyContext.tsx   # Faculty CRUD (AsyncStorage backed + 12 seed faculty members)
+
+app/
+  faculty.tsx          # Faculty Directory screen
+```
+
 ## User Roles
 
 - **Student**: Read-only access, personalized by department/year

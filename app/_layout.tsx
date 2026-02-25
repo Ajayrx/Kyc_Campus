@@ -15,6 +15,7 @@ import {
 } from "@expo-google-fonts/poppins";
 import { AuthProvider } from "@/context/AuthContext";
 import { PostsProvider } from "@/context/PostsContext";
+import { FacultyProvider } from "@/context/FacultyContext";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -25,6 +26,7 @@ function RootLayoutNav() {
       <Stack.Screen name="(auth)" options={{ presentation: "modal" }} />
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="post/[id]" options={{ presentation: "card", headerShown: false }} />
+      <Stack.Screen name="faculty" options={{ presentation: "card", headerShown: false }} />
     </Stack>
   );
 }
@@ -50,7 +52,9 @@ export default function RootLayout() {
           <KeyboardProvider>
             <AuthProvider>
               <PostsProvider>
-                <RootLayoutNav />
+                <FacultyProvider>
+                  <RootLayoutNav />
+                </FacultyProvider>
               </PostsProvider>
             </AuthProvider>
           </KeyboardProvider>
