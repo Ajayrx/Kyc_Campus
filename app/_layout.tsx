@@ -27,6 +27,8 @@ function RootLayoutNav() {
       <Stack.Screen name="(tabs)" />
       <Stack.Screen name="post/[id]" options={{ presentation: "card", headerShown: false }} />
       <Stack.Screen name="faculty" options={{ presentation: "card", headerShown: false }} />
+      <Stack.Screen name="timetable" options={{ presentation: "card", headerShown: false }} />
+      <Stack.Screen name="attendance" options={{ presentation: "card", headerShown: false }} />
     </Stack>
   );
 }

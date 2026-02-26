@@ -29,7 +29,7 @@ const CATEGORIES: { key: PostCategory; icon: string }[] = [
   { key: "calendar", icon: "calendar-number-outline" },
 ];
 
-const DEPARTMENTS = ["all", "CSE", "IT", "ECE", "ME", "CE", "EE", "MBA", "MCA"];
+const DEPARTMENTS = ["all", "CSE", "IT", "ECE", "ME", "CE", "EE", "MBA", "MCA", "MTech"];
 
 const ALLOWED_ROLES = ["admin", "department", "club", "placement"];
 

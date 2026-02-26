@@ -20,7 +20,7 @@ import * as Crypto from "expo-crypto";
 import { useAuth, UserRole } from "@/context/AuthContext";
 import { COLORS } from "@/constants/colors";
 
-const DEPARTMENTS = ["CSE", "IT", "ECE", "ME", "CE", "EE", "MBA", "MCA"];
+const DEPARTMENTS = ["CSE", "IT", "ECE", "ME", "CE", "EE", "MBA", "MCA", "MTech"];
 const YEARS = ["1st Year", "2nd Year", "3rd Year", "4th Year", "PG"];
 const ROLES: { value: UserRole; label: string; icon: string }[] = [
   { value: "student", label: "Student", icon: "school" },

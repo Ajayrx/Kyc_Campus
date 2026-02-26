@@ -6,10 +6,13 @@ import {
   StyleSheet,
   useColorScheme,
   Platform,
+  Pressable,
 } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import Animated, { FadeInDown } from "react-native-reanimated";
+import * as Haptics from "expo-haptics";
+import { router } from "expo-router";
 import { usePosts } from "@/context/PostsContext";
 import { COLORS, CATEGORY_COLORS } from "@/constants/colors";
 
@@ -74,6 +77,38 @@ export default function CalendarScreen() {
       <View style={[styles.header, { paddingTop: topInset + 16, backgroundColor: C.background }]}>
         <Text style={[styles.headerTitle, { color: C.text }]}>Campus Calendar</Text>
         <Text style={[styles.headerSub, { color: C.textSecondary }]}>Deadlines & upcoming events</Text>
+        <View style={styles.quickRow}>
+          <Pressable
+            onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); router.push("/timetable"); }}
+            style={({ pressed }) => [styles.quickCard, {
+              backgroundColor: isDark ? COLORS.navyCard : "#fff",
+              borderColor: COLORS.cyan + "50",
+              opacity: pressed ? 0.85 : 1,
+              transform: [{ scale: pressed ? 0.97 : 1 }],
+            }]}
+          >
+            <View style={[styles.quickIcon, { backgroundColor: COLORS.cyan + "20" }]}>
+              <Ionicons name="grid-outline" size={22} color={COLORS.cyan} />
+            </View>
+            <Text style={[styles.quickLabel, { color: C.text }]}>Timetable</Text>
+            <Text style={[styles.quickSub, { color: C.textMuted }]}>Year 1–4 schedule</Text>
+          </Pressable>
+          <Pressable
+            onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); router.push("/attendance"); }}
+            style={({ pressed }) => [styles.quickCard, {
+              backgroundColor: isDark ? COLORS.navyCard : "#fff",
+              borderColor: "#34D399" + "50",
+              opacity: pressed ? 0.85 : 1,
+              transform: [{ scale: pressed ? 0.97 : 1 }],
+            }]}
+          >
+            <View style={[styles.quickIcon, { backgroundColor: "#34D39920" }]}>
+              <Ionicons name="checkmark-circle-outline" size={22} color="#34D399" />
+            </View>
+            <Text style={[styles.quickLabel, { color: C.text }]}>Attendance</Text>
+            <Text style={[styles.quickSub, { color: C.textMuted }]}>Track 10 subjects</Text>
+          </Pressable>
+        </View>
       </View>
 
       <SectionList
@@ -147,7 +182,12 @@ const styles = StyleSheet.create({
   root: { flex: 1 },
   header: { paddingHorizontal: 20, paddingBottom: 16 },
   headerTitle: { fontFamily: "Poppins_700Bold", fontSize: 24 },
-  headerSub: { fontFamily: "Poppins_400Regular", fontSize: 13, marginTop: 2 },
+  headerSub: { fontFamily: "Poppins_400Regular", fontSize: 13, marginTop: 2, marginBottom: 14 },
+  quickRow: { flexDirection: "row", gap: 12 },
+  quickCard: { flex: 1, padding: 14, borderRadius: 16, borderWidth: 1.5, gap: 6 },
+  quickIcon: { width: 40, height: 40, borderRadius: 12, alignItems: "center", justifyContent: "center", marginBottom: 2 },
+  quickLabel: { fontFamily: "Poppins_600SemiBold", fontSize: 14 },
+  quickSub: { fontFamily: "Poppins_400Regular", fontSize: 11 },
   list: { paddingHorizontal: 16, paddingTop: 4 },
   sectionHeader: { flexDirection: "row", alignItems: "center", gap: 10, paddingVertical: 14, paddingHorizontal: 4 },
   sectionLine: { width: 3, height: 18, borderRadius: 2 },

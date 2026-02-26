@@ -22,7 +22,7 @@ import { useFaculty, Faculty } from "@/context/FacultyContext";
 import { useAuth } from "@/context/AuthContext";
 import { COLORS } from "@/constants/colors";
 
-const DEPARTMENTS = ["All", "CSE", "IT", "ECE", "ME", "CE", "EE", "MBA", "MCA"];
+const DEPARTMENTS = ["All", "CSE", "IT", "ECE", "ME", "CE", "EE", "MBA", "MCA", "MTech"];
 
 const DEPT_COLORS: Record<string, string> = {
   CSE: "#22D3EE",
